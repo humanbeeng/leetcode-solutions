@@ -14,7 +14,7 @@ public:
                 majority_freq--;
                 if(not majority_freq) {
                     curr_majority_candidate = element;
-                    majority_freq++;
+                    majority_freq = 1;
                 }
             }
         }
