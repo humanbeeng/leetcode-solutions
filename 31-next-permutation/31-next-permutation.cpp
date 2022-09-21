@@ -12,7 +12,7 @@ public:
         }
         
         if(dip_idx == 0) {
-            sort(nums.begin(), nums.end());
+            reverse(nums.begin(), nums.end());
             return;
         }
         
