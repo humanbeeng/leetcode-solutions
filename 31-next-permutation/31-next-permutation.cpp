@@ -4,7 +4,7 @@ public:
         int n_nums = nums.size();
         int dip_idx = n_nums - 1;
         
-        while(dip_idx > 0) {
+        while(dip_idx - 1 >= 0) {
             if(nums[dip_idx] > nums[dip_idx - 1]) {
                 break;
             }
