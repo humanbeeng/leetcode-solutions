@@ -28,7 +28,7 @@ public:
         swap(nums[next_greater_idx], nums[dip_idx - 1]);
         
         reverse(nums.begin() + dip_idx, nums.end());
-        
+        // sort(nums.begin() + dip_idx, nums.end());
         return;
     }
 };
