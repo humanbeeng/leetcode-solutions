@@ -16,18 +16,20 @@ public:
             return;
         }
         
+        dip_idx--;
+        
         int next_greater_idx = n_nums - 1;
         
         while(next_greater_idx > dip_idx) {
-            if(nums[next_greater_idx] > nums[dip_idx - 1]) {
+            if(nums[next_greater_idx] > nums[dip_idx]) {
                 break;
             }
             next_greater_idx--;
         }
         
-        swap(nums[next_greater_idx], nums[dip_idx - 1]);
+        swap(nums[next_greater_idx], nums[dip_idx]);
         
-        reverse(nums.begin() + dip_idx, nums.end());
+        reverse(nums.begin() + dip_idx + 1, nums.end());
         // sort(nums.begin() + dip_idx, nums.end());
         return;
     }
