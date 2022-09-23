@@ -10,7 +10,7 @@ public:
         int n_intervals = intervals.size();
         
         
-        sort(intervals.begin(), intervals.end(), Comp);
+        sort(intervals.begin(), intervals.end());
         
         for(auto interval: intervals) {
             if(result.empty()) {
