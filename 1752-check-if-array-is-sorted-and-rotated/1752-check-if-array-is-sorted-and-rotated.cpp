@@ -14,7 +14,7 @@ public:
                 if(nums[i] > nums[i + 1]) {
                     if(not dip_found) {
                         dip_found = true;
-                        first_section = true;
+                        first_section = false;
                     } else if(dip_found) {
                         return false;
                     }
