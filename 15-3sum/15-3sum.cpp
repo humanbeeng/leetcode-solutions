@@ -23,8 +23,13 @@ public:
                     vector<int> triplet = {curr_element, nums[left], nums[right]};
                     result.push_back(triplet);
                     left++;
+                    
                     while(left < right && nums[left] == nums[left - 1]) {
                         left++;
+                    }
+                    
+                    while(left < right - 1 && nums[right - 1] == nums[right]) {
+                        right--;
                     }
                 }
                 else if(curr_triplet_sum > 0) {
