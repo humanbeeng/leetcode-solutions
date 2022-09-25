@@ -1,52 +1,31 @@
 class Solution {
 public:
-    
-    static auto Comp(const vector<int> a, const vector<int> b) -> bool {
-        return (a[0] < b[0]);
-    }
-    
-//     auto merge(vector<vector<int>>& intervals) -> vector<vector<int>>{
-//         vector<vector<int>> result;
-//         int n_intervals = intervals.size();
-        
-        
-//         sort(intervals.begin(), intervals.end());
-        
-//         for(auto interval: intervals) {
-//             if(result.empty()) {
-//                 result.push_back(interval);
-//                 continue;
-//             }
-            
-//             if(result.back()[1] >= interval[0]) {
-//                 result.back()[0] = min(result.back()[0], interval[0]);
-//                 result.back()[1] = max(result.back()[1], interval[1]);
-//             } else {
-//                 result.push_back(interval);
-//             }
-//         }
-        
-//         return result;
-//     }
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
-        if(intervals.size() == 0){
+        int n_intervals = intervals.size();
+        
+        if(n_intervals == 1) {
             return intervals;
         }
-        vector<vector<int>> res;
+        
+        vector<vector<int>> merged_intervals;
+        
         sort(intervals.begin(), intervals.end());
-        vector<int> element = intervals[0];
-        for(auto it: intervals){
-            
-            if(element[1] >= it[0] ){
-                element[1] = max(element[1], it[1]);
+        
+        for(vector<int> interval: intervals) {
+            if(merged_intervals.empty()) {
+                merged_intervals.push_back(interval);
+                continue;
             }
-            else{
-                res.push_back(element);
-                element = it;
-            } 
+            
+           if(merged_intervals.back()[1] >= interval[0]) {
+               merged_intervals.back()[0] = min(merged_intervals.back()[0], interval[0]);
+               merged_intervals.back()[1] = max(merged_intervals.back()[1], interval[1]);
+           } else {
+               merged_intervals.push_back(interval);
+           }
         }
-        res.push_back(element);
-        return res;
+        
+        return merged_intervals;
         
     }
 };
