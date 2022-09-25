@@ -24,7 +24,7 @@ public:
                     result.push_back(triplet);
                     left++;
                     
-                    while(left < right && nums[left] == nums[left - 1]) {
+                    while(left < right && nums[left - 1] == nums[left]) {
                         left++;
                     }
                     
