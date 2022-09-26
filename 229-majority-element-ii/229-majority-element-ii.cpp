@@ -11,7 +11,7 @@ public:
             return majority_elements;
         }
         
-        int candidate_1 = nums[0], candidate_2 = nums[1], freq_1 = 0, freq_2 = 0;
+        int candidate_1 = 0, candidate_2 = 0, freq_1 = 0, freq_2 = 0;
         
         for(int i = 0; i < n_elements; i++) {
             
