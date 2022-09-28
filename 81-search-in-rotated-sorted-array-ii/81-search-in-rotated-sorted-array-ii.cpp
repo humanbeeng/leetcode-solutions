@@ -28,7 +28,7 @@ public:
                 }
             }
             
-            else  {
+            else if(nums[left] == mid_element){
                 left++;
             }
         }
