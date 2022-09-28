@@ -4,24 +4,24 @@ public:
         int left = 0, right = nums.size() - 1;
         
         while(left <= right) {
-            while(left < right && nums[left] == nums[left + 1]) {
+            
+             while(left + 1 <= right && nums[left] == nums[left + 1]) {
                 ++left;
             }
             
-            while(right > left && nums[right - 1] == nums[right]) {
+            while(right - 1 >= left && nums[right - 1] == nums[right]) {
                 --right;
             }
-             int mid = left + ((right - left) / 2);
+            int mid = left + ((right - left) / 2);
             
             int mid_element = nums[mid];
+            
+            
+           
             
             if(mid_element == target) {
                 return true;
             }
-            
-            
-            
-           
             
             if(mid_element >= nums[left]) {
                 if(target >= nums[left] && target < mid_element) {
