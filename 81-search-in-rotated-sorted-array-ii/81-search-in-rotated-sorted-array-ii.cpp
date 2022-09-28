@@ -4,20 +4,22 @@ public:
         int left = 0, right = nums.size() - 1;
         
         while(left <= right) {
-             while(left < right && nums[left] == nums[left + 1]) {
+            while(left < right && nums[left] == nums[left + 1]) {
                 ++left;
             }
             
             while(right > left && nums[right - 1] == nums[right]) {
                 --right;
             }
-            int mid = left + ((right - left) / 2);
+             int mid = left + ((right - left) / 2);
             
             int mid_element = nums[mid];
             
             if(mid_element == target) {
                 return true;
             }
+            
+            
             
            
             
