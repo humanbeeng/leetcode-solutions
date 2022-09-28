@@ -5,7 +5,7 @@ public:
         
         while(left <= right) {
             
-             while(left + 1 <= right && nums[left] == nums[left + 1]) {
+            while(left + 1 <= right && nums[left] == nums[left + 1]) {
                 ++left;
             }
             
@@ -16,9 +16,7 @@ public:
             
             int mid_element = nums[mid];
             
-            
-           
-            
+                                  
             if(mid_element == target) {
                 return true;
             }
