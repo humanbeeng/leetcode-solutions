@@ -4,6 +4,13 @@ public:
         int left = 0, right = nums.size() - 1;
         
         while(left <= right) {
+             while(left < right && nums[left] == nums[left + 1]) {
+                ++left;
+            }
+            
+            while(right > left && nums[right - 1] == nums[right]) {
+                --right;
+            }
             int mid = left + ((right - left) / 2);
             
             int mid_element = nums[mid];
@@ -12,7 +19,9 @@ public:
                 return true;
             }
             
-            if(mid_element > nums[left]) {
+           
+            
+            if(mid_element >= nums[left]) {
                 if(target >= nums[left] && target < mid_element) {
                     right = mid - 1;
                 } else {
@@ -28,9 +37,7 @@ public:
                 }
             }
             
-            else if(nums[left] == mid_element){
-                left++;
-            }
+            
         }
         
         return false;
