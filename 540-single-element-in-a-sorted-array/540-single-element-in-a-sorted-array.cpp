@@ -19,9 +19,7 @@ public:
             }
         }
         
-        if(nums[left] == nums[left ^ 1]) {
-            return nums[right];
-        }
+      
         
         return nums[left];
         
