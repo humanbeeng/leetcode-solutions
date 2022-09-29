@@ -21,7 +21,7 @@ public:
         
       
         
-        return nums[left];
+        return nums[right];
         
     }
 };
