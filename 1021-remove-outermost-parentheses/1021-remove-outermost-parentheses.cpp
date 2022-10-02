@@ -1,8 +1,8 @@
 class Solution {
 public:
     string removeOuterParentheses(string s) {
-        int n_open = 0, n_closed = 0;
-        bool is_opened = false;
+        int n_open = 0;
+
         string result = "";
 
         const char open_bracket = '(', closed_bracket = ')';
