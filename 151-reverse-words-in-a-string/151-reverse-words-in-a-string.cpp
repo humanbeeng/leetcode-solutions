@@ -5,7 +5,8 @@ public:
         
         string result = "";
         string curr_substr = "";
-        int s = -1, e = 0;
+        
+        int s = -1;
         for(int i = 0; i < str.size(); i++) {
             char c = str[i];
             
