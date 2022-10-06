@@ -13,13 +13,12 @@ public:
         
         for(char c: t) {
             freq_map[c]--;
-        }
-        
-        for(auto it: freq_map) {
-            if(it.second != 0) {
+            if(freq_map[c] < 0) {
                 return false;
             }
         }
+        
+       
         return true;
     }
 };
