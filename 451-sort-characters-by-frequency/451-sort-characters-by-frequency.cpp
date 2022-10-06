@@ -1,6 +1,6 @@
 class Solution {
 public:
-    string frequencySort(string s) {
+    auto frequencySort(string s) -> string {
         string result = "";
         
         priority_queue<pair<int, char>> pq;
