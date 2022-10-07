@@ -16,7 +16,6 @@ public:
                 char c = s[j];
                 int idx = c - 'a';
                 freq[idx]++;
-                max_freq = max(max_freq, freq[idx]);
                 
                 for(int k = 0; k < 26; k++) {
                     if(freq[k] == 0) {
