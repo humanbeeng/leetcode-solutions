@@ -11,20 +11,21 @@ public:
         for(int i = 0; i < s_len; i++) {
             
             int freq[26] = {};
-            
+            int max_freq = INT_MIN;
             for(int j = i; j < s_len; j++) {
+                int min_freq = INT_MAX;
+                
                 
                 char c = s[j];
                 int idx = c - 'a';
                 freq[idx]++;
-                int max_freq = INT_MIN, min_freq = INT_MAX;
+                max_freq = max(max_freq, freq[idx]);
                 
                 for(int k = 0; k < 26; k++) {
                     if(freq[k] == 0) {
                         continue;
                     }    
                     
-                    max_freq = max(max_freq, freq[k]);
                     min_freq = min(min_freq, freq[k]);
                 }
                 
