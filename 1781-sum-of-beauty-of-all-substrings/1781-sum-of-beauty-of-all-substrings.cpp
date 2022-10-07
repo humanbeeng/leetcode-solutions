@@ -1,20 +1,17 @@
 class Solution {
 public:
     int beautySum(string s) {
-      
         
         int result = 0;
         int s_len = s.length();
         
-
-        
         for(int i = 0; i < s_len; i++) {
-            
+
             int freq[26] = {};
-            int max_freq = INT_MIN;
+            
             for(int j = i; j < s_len; j++) {
+                int max_freq = INT_MIN;
                 int min_freq = INT_MAX;
-                
                 
                 char c = s[j];
                 int idx = c - 'a';
@@ -25,13 +22,11 @@ public:
                     if(freq[k] == 0) {
                         continue;
                     }    
-                    
+                    max_freq = max(max_freq, freq[k]);
                     min_freq = min(min_freq, freq[k]);
                 }
                 
                 result += (max_freq - min_freq);
-                
-                
                 
             }
         }
