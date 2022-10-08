@@ -11,10 +11,14 @@ public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
         ListNode* ptrA = headA; ListNode* ptrB = headB;
         
+        // ptrA == ptrB == nullptr or ptrA == ptrB == some value
         while(ptrA != ptrB) {
             
-            ptrA = ptrA ? ptrA -> next : headB;
-            ptrB = ptrB ? ptrB -> next : headA;
+            if(ptrA == nullptr) ptrA = headB;
+            else ptrA = ptrA -> next;
+            
+            if(ptrB == nullptr) ptrB = headA;
+            else ptrB = ptrB -> next;
             
         }
         
