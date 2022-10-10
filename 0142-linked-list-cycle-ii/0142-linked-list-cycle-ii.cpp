@@ -25,6 +25,7 @@ public:
             }
         }
         
+//         Check if there's no loop
         if(fast == nullptr or fast -> next == nullptr) {
             return nullptr;
         }
