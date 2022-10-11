@@ -16,16 +16,16 @@ public:
             return head;
         }
         
-        ListNode* even_head = head -> next;
-        ListNode* temp = even_head;
-        ListNode* odd_head = head;
+        ListNode* even = head -> next;
+        ListNode* even_head = even;
+        ListNode* odd = head;
         
-        while(odd_head -> next and even_head -> next) {
-            odd_head = odd_head -> next = even_head -> next;
-            even_head = even_head -> next = odd_head -> next;
+        while(odd -> next and even -> next) {
+            odd = odd -> next = even -> next;
+            even = even -> next = odd -> next;
         }
         
-        odd_head -> next = temp;
+        odd -> next = even_head;
         
         return head;
     }
