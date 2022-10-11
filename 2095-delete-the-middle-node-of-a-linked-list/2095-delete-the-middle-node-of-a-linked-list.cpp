@@ -11,8 +11,7 @@
 class Solution {
 public:
     ListNode* deleteMiddle(ListNode* head) {
-       
-        if(head -> next == nullptr or head == nullptr) {
+        if(head == nullptr or head -> next == nullptr) {
             delete(head);
             return nullptr;
         }
@@ -20,26 +19,17 @@ public:
         ListNode* fast = head;
         ListNode* slow = head;
         ListNode* prev = slow;
-          
+        
         while(fast and fast -> next) {
             fast = fast -> next -> next;
             prev = slow;
             slow = slow -> next;
         }
         
-//         if(slow -> next) {
-//             slow -> val = slow -> next -> val;
-//             ListNode* temp = slow -> next;
-//             slow -> next = slow -> next -> next;
-//             delete(temp);
-//         } else {
-// //             Happens only in case of just two nodes in LinkedList
-//             head -> next = nullptr;
-//             delete(head -> next);
-//         }
-        
         prev -> next = slow -> next;
         delete(slow);
+        
         return head;
+        
     }
 };
