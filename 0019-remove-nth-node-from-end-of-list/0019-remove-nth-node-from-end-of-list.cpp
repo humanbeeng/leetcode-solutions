@@ -18,7 +18,7 @@ public:
         
         ListNode* fast = head, *prev = nullptr, *slow = head;
         
-        for(int i = 0; i < n - 1; i++) { 
+        for(int i = 0; i < n - 1; i++) { // to accomodate for 1 based indexing
             fast = fast -> next;
         }
         
@@ -27,13 +27,15 @@ public:
             return head;
         } 
         
-        while(fast -> next) {
+        while(fast -> next) { // halts at last node
             fast = fast -> next;
             prev = slow;
             slow = slow -> next;
         }
         
-        if(prev != nullptr) {
+        if(prev != nullptr) { 
+            // when n = 2 and it is currently pointing to first node of the list, as in [1,2] n = 2. then prev would be null
+            // and there should be a check for this.
             prev -> next = slow -> next;
             delete(slow);
         } else {
