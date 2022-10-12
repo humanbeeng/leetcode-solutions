@@ -18,7 +18,7 @@ public:
         
         ListNode* fast = head, *prev = nullptr, *slow = head;
         
-        for(int i = 0; i < n; i++) { // to accomodate for 1th indexing
+        for(int i = 0; i < n; i++) { 
             fast = fast -> next;
         }
         
@@ -33,9 +33,12 @@ public:
             slow = slow -> next;
         }
         
-        prev -> next = slow -> next;
-        delete(slow);
-        
+        if(prev != nullptr) {
+            prev -> next = slow -> next;
+            delete(slow);
+        } else {
+            head = head -> next;
+        }
         
         
         return head;
