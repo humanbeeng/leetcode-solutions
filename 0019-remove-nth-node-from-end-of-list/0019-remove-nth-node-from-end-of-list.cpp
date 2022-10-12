@@ -18,7 +18,7 @@ public:
         
         ListNode* fast = head, *prev = nullptr, *slow = head;
         
-        for(int i = 0; i < n; i++) { 
+        for(int i = 0; i < n - 1; i++) { 
             fast = fast -> next;
         }
         
@@ -27,7 +27,7 @@ public:
             return head;
         } 
         
-        while(fast) {
+        while(fast -> next) {
             fast = fast -> next;
             prev = slow;
             slow = slow -> next;
