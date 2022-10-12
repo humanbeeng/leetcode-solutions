@@ -9,7 +9,9 @@ public:
             return x;
         }
         if(n < 0) {
-            return (1 / x) * myPow(1/x, -(n + 1));
+            n = n + 1;
+            n = -n;
+            return (1 / x) * myPow(1/x, n);
         }
         if(n % 2 == 0) 
             return myPow(x * x, n / 2);
