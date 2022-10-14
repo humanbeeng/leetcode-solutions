@@ -1,19 +1,19 @@
 class Solution {
 public:
 
-    void helper(vector<int> &nums, vector<int> &subset, vector<vector<int>> &result, int n) {
-        if(n < 0) {
+    void generate(vector<int> &nums, vector<int> &subset, vector<vector<int>> &result, int i) {
+        if(i >= nums.size()) {
             result.push_back(subset);
             return;
         }
+
+        generate(nums, subset, result, i + 1);
         
-        subset.push_back(nums[n]);
+        subset.push_back(nums[i]);
         
-        helper(nums, subset, result, n - 1);
+        generate(nums, subset, result, i + 1);        
         
         subset.pop_back();
-        
-        helper(nums, subset, result, n - 1);
     }
     
     vector<vector<int>> subsets(vector<int>& nums) {
@@ -24,7 +24,7 @@ public:
         
         vector<int> subset;
         
-        helper(nums, subset, result, n_nums - 1);
+        generate(nums, subset, result, 0);
         
         return result;
     }
