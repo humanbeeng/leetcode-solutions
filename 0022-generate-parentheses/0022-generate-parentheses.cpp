@@ -1,10 +1,3 @@
-/*
- * @lc app=leetcode id=22 lang=cpp
- *
- * [22] Generate Parentheses
- */
-
-// @lc code=start
 class Solution {
 public:
     const char closed_parentheses = ')';
@@ -32,5 +25,4 @@ public:
        return result;
     }
 };
-// @lc code=end
 
