@@ -19,6 +19,8 @@ public:
                 combination.push_back(candidates[i]);
                 helper(candidates, result, combination, target - candidates[i], i + 1);
                 combination.pop_back();
+            } else {
+                helper(candidates, result, combination, target, i + 1);
             }
             
         }
