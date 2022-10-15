@@ -2,19 +2,16 @@ class Solution {
 public:
     void generateSubsets(vector<int> &nums, vector<vector<int>> &result, vector<int> &subset, int start) {
         
-        if(start >= nums.size()) {
-            result.push_back(subset);
-            return;
+        result.push_back(subset);
+        
+        for(int i = start; i < nums.size(); i++) {
+            if(i > start and nums[i] == nums[i - 1])
+                continue;
+            
+            subset.push_back(nums[i]);
+            generateSubsets(nums, result, subset, i + 1);
+            subset.pop_back();
         }
-        
-        subset.push_back(nums[start]);
-        generateSubsets(nums, result, subset, start + 1);
-        subset.pop_back();
-        
-        while((start + 1) < nums.size() and nums[start] == nums[start + 1]) 
-            start++;
-        
-        generateSubsets(nums, result, subset, start + 1);
         
     }
     
