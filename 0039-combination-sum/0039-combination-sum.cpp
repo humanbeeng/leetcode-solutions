@@ -3,7 +3,7 @@ public:
     
     void helper(vector<vector<int>> &result, vector<int> &combination, vector<int> &candidates, int target, int i) {
         
-        if(target == 0 or i >= candidates.size()) {
+        if(i >= candidates.size()) {
             if(target == 0)
                 result.push_back(combination);
             return;
