@@ -3,7 +3,10 @@ public:
     
     void helper(vector<vector<int>> &result, vector<int> &combination, vector<int> &candidates, int target, int i) {
         
-        if(i >= candidates.size()) {
+        if(i >= candidates.size()) { 
+            // end state, ie -> all nodes are processed and we are at leaves of 
+            // recursion tree
+            
             if(target == 0)
                 result.push_back(combination);
             return;
