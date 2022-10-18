@@ -9,7 +9,7 @@ public:
     
     void helper(vector<int> &arr, vector<int> &result, int n, int sum, int i) {
         
-        if(i >= n) {
+        if(i == n) {
             result.push_back(sum);
             return;
         }
