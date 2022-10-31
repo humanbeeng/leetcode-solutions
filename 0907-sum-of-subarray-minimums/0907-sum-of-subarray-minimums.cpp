@@ -7,7 +7,7 @@ public:
         for(int i = n_elements - 1; i >= 0; i--) {
             int curr_element = arr[i];
             
-            while(not s.empty() and curr_element < arr[s.top()]) {
+            while(not s.empty() and curr_element <= arr[s.top()]) {
                 nsl[s.top()] = i;
                 s.pop();
             }
@@ -23,7 +23,7 @@ public:
         for(int i = 0; i < n_elements; i++) {
             int curr_element = arr[i];
             
-            while(not s.empty() and curr_element <= arr[s.top()]) {
+            while(not s.empty() and curr_element < arr[s.top()]) {
                 nsr[s.top()] = i;
                 s.pop();
             }
