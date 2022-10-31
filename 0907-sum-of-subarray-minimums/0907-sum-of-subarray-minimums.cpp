@@ -51,10 +51,10 @@ public:
             int m = i - nsl[i];
             int n = nsr[i] - i;
             
-            long long product = (m * n) % mod;
-            product = (product * curr_element) % mod;
+            long long n_subsets = (m * n) % mod;
+            long long contribution = (n_subsets * curr_element) % mod;
             
-            sum_subarray_mins = (sum_subarray_mins + product) % mod;
+            sum_subarray_mins = (sum_subarray_mins + contribution) % mod;
         }
         
         return sum_subarray_mins;
