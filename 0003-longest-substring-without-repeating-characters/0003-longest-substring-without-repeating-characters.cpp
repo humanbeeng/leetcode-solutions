@@ -11,7 +11,6 @@ public:
                 start = max(start, m[c] + 1);
             }
             int curr_len = i - start + 1;
-            cout << "start: " << start << " curr_len: " << curr_len << endl;
             max_len = max(max_len, curr_len);
             m[c] = i;
         }
